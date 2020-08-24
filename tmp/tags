@@ -1,0 +1,12 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+MAX_IFS	ifconf.c	65;"	d	file:
+hwaddr2str	ifconf.c	/^char *hwaddr2str(struct sockaddr *addr, char *buf, size_t len) $/;"	f
+ifconf_dump_all	ifconf.c	/^void ifconf_dump_all() $/;"	f
+ifconf_print_list	ifconf.c	/^void ifconf_print_list() $/;"	f
+main	test.c	/^void main(int argc, char *argv[]) {$/;"	f
+sockaddr2str	ifconf.c	/^char *sockaddr2str(struct sockaddr *addr, char *buf, size_t len) $/;"	f

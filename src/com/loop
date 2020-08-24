@@ -1,0 +1,10 @@
+#! /usr/bin/bash
+
+DOSLEEP=1;
+
+[ -n "$(echo  "`getopt -q "S" $@`" | sed -r -n -e '/.* -S .*/p')" ] && DOSLEEP=0
+
+while [ 1 ];
+do
+	[ $DOSLEEP -eq 1 ] && sleep 1
+done;

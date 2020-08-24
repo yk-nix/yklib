@@ -1,0 +1,1 @@
+cmd_/home/yui/tmp/module/helloworld/test.o := ld -m elf_x86_64   -r -o /home/yui/tmp/module/helloworld/test.o /home/yui/tmp/module/helloworld/hello.o /home/yui/tmp/module/helloworld/helloworld.o ; scripts/mod/modpost /home/yui/tmp/module/helloworld/test.o

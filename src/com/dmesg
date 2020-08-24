@@ -1,0 +1,27 @@
+#! /usr/bin/bash
+
+lastmsg=""
+touch /tmp/lastmsg
+LINES=`echo -n $1 | sed -r -e 's/[-_[:punct:][:alpha:]]//g'`
+[ -z "$LINES" ] && LINES=10
+
+trap "rm -f /tmp/lastmsg /tmp/msg; echo; exit 1" SIGINT
+
+while [ 1 ];
+do
+	msg=`dmesg | tail`
+	if [ "$lastmsg" != "$msg" ]; then
+		dmesg | tail -n $LINES > /tmp/msg
+		cat /tmp/msg | while read LINE;
+		do
+			TSTAMP=${LINE#*[}
+			TSTAMP=${TSTAMP%%]*}
+			if [ -z "`grep "$TSTAMP" /tmp/lastmsg`" ]; then
+				echo $LINE;
+			fi
+		done
+		dmesg | tail -n $LINES > /tmp/lastmsg
+	fi
+	sleep 1	
+	lastmsg="$msg"
+done

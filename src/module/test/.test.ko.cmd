@@ -1,0 +1,1 @@
+cmd_/home/yui/tmp/module/test/test.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/yui/tmp/module/test/test.ko /home/yui/tmp/module/test/test.o /home/yui/tmp/module/test/test.mod.o

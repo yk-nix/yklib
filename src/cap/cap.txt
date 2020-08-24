@@ -1,0 +1,10 @@
+
+cap_t cap_init(void);
+cap_t cap_get_proc(void);
+cap_t cap_get_file(char *filepath);
+char *cap_to_text(cap_t cap, ssize_t *len);
+int cap_set_flag(cap_t cap, cap_flag_t flag, int num, cap_value_t *values, cap_flag_value_t v);
+int cap_set_file(char *filepath, cap_t cap);
+void cap_free(void *cap);
+ssize_t cap_copy_ext(void *ext, cap_t cap, ssize_t size);
+cap_t cap_copy_int(const void *ext);

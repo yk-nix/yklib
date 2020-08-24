@@ -1,0 +1,16 @@
+#! /usr/bin/bash
+
+MACRO=$1
+USAGE="usage: $0 <marco>  <path>..."
+SPATHS=$2
+
+[ $# -lt 1 ] && echo $USAGE && exit 
+
+[ -z "$SPATHS" ] && SPATHS="/usr/include"
+
+
+while [ -n "$SPATHS" ]; do
+	find $SPATHS -type f -exec grep "$MACRO" {} \; -a -exec ls -l {} \;
+	shift
+	SPATHS=$2
+done 
